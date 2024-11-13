@@ -265,7 +265,7 @@ VERSION=6.6.36.6
 
 if build 'wsl2-linux-kernel' "linux-msft-wsl-${VERSION}"; then
     download "https://api.github.com/repos/microsoft/WSL2-Linux-Kernel/tarball/linux-msft-wsl-${VERSION}" "linux-msft-wsl-${VERSION}.tar.gz"
-    echo 'yes' | make KCONFIG_CONFIG=../config-wsl -j "$cpu_cores"
+    echo 'yes' | make KCONFIG_CONFIG=../config-wsl -j "$cpu_threads"
     build_done 'wsl2-linux-kernel' "linux-msft-wsl-${VERSION}"
 fi
 
